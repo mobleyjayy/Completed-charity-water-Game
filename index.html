@@ -3,23 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Water Drop Game</title>
+    <title>Water Drop Challenge</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="game-wrapper">
-        <h1 class="game-title">Water Drop</h1>
-        <p class="game-tagline">Catch the good drops, avoid the bad ones!</p>
+        <h1 class="game-title">Water Drop Challenge</h1>
+        <p class="game-tagline">Catch the good drops, avoid the bad ones, and help the water flow!</p>
+
         <div class="score-panel">
-            <div class="score">Score: <span id="score">0</span></div>
-            <div class="timer">Time: <span id="time">30</span>s</div>
-            <button id="start-btn">Start Game</button>
+            <div class="status-group">
+                <div class="score">Score: <span id="score">0</span></div>
+                <div class="timer">Time: <span id="time">30</span>s</div>
+            </div>
+            <div class="controls">
+                <label for="difficulty">Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="normal" selected>Normal</option>
+                    <option value="hard">Hard</option>
+                </select>
+                <button id="start-btn">Start Game</button>
+            </div>
         </div>
-        
+
+        <div id="goal-info" class="goal-info">Goal: Reach <strong>15</strong> points in <strong>25</strong> seconds</div>
         <div id="game-container">
+            <div id="catcher" class="catcher" title="Drag to catch drops"></div>
+        </div>
+        <div id="message" class="message">Choose a difficulty and catch the good drops.</div>
+    </div>
+
+    <div id="completion-popup" class="completion-popup hidden" style="display: none;">
+        <div class="popup-card">
+            <p id="completion-text"></p>
+            <button id="next-level-btn">Next Level</button>
         </div>
     </div>
-    
+
+    <footer class="site-footer">
+        <p>Inspired by <a href="https://www.charitywater.org/" target="_blank" rel="noopener">charity: water</a></p>
+        <p><a href="https://www.charitywater.org/donate" target="_blank" rel="noopener">Donate to charity: water</a> | <a href="https://www.charitywater.org/about" target="_blank" rel="noopener">Learn more</a></p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
